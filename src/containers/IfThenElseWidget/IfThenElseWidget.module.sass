@@ -1,0 +1,139 @@
+$ifheight: 32px
+
+.IfThenElseWidget
+    margin-top: 1rem
+    margin-bottom: 1rem
+    position: relative
+    width: 100%
+    // height: 100%
+    display: grid
+    grid-template-columns: 40px 1fr
+    grid-template-rows: $ifheight auto auto
+    grid-template-areas: "close content" "track content" "track content"
+    & > div:first-of-type
+        display: block
+        width: 100%
+        height: 100%
+        grid-area: close
+        & > button
+            display: flex
+            flex-direction: row
+            justify-content: center
+            width: inherit
+            height: inherit
+            & > svg
+                position: relative
+                display: block
+                width: $ifheight
+                height: $ifheight
+                box-sizing: border-box
+                border-radius: 0.5rem
+                border: 1px solid #738b74
+                outline: 1px solid #5f8a61
+                stroke: white
+                stroke-linecap: round
+                stroke-linejoin: round
+                stroke-width: 0.33
+                cursor: pointer
+                & > path:nth-of-type(1)
+                    d: path("M 2,2 L 8,8")
+                & > path:nth-of-type(2)
+                    d: path("M 8,2 L 2,8")
+                &:hover
+                    border: 1px solid cyan
+                    outline: 1px solid rgb(cyan, 0.5)
+
+    & > div:nth-of-type(2)
+        display: flex
+        flex-direction: row
+        justify-content: center
+        grid-area: track
+        position: relative
+        width: 100%
+        height: 100%
+        padding: 10px 0px
+        & > span
+            display: block
+            width: 0px
+            height: 100%
+            box-sizing: border-box
+            border-left: 4px dashed rgb(cyan, 0.5)
+    & > div:last-of-type
+        display: block
+        grid-area: content
+
+@mixin if_block_style
+    height: 1.75rem
+    line-height: 1.75rem
+    vertical-align: middle
+
+.IfBlock,.ThenBlock,.ElseBlock
+    // margin-top: 5px
+    margin-bottom: 8px
+    position: relative
+    width: 100%
+    display: grid
+    grid-template-areas: "op content"
+    grid-template-columns: 60px 1fr
+    grid-template-rows: 1fr
+    column-gap: 0.5rem
+    // justify-content: center
+    & > div:nth-of-type(1)
+        position: relative
+        grid-area: op
+        display: flex
+        flex-direction: row
+        justify-content: flex-end
+        width: inherit
+        & > span
+            position: relative
+            +if_block_style
+            font-size: 0.8rem
+            box-sizing: border-box
+            padding: 0px 0.5rem
+            border: 1px solid cyan
+            border-radius: 6px
+.IfBlock
+    // display: flex
+    box-sizing: border-box
+    height: $ifheight
+    & > div:nth-of-type(1)
+        align-items: center
+    & > label
+        display: block
+        position: relative
+        width: 100%
+        height: 100%
+        cursor: pointer
+        box-sizing: border-box
+        border: 1px solid cyan
+        border-radius: 6px
+        & > select
+            position: relative
+            width: 100%
+            +if_block_style
+            font-size: 1.2rem
+            padding-left: 4px
+            &:selected
+                outline: 3px solid red
+        & > svg
+            position: absolute
+            right: 0px
+            width: 1.75rem
+            +if_block_style
+            stroke: white
+            stroke-linecap: round
+            stroke-linejoin: round
+            stroke-width: 1
+            cursor: pointer
+            pointer-events: none
+            & > path:nth-of-type(1)
+                d: path("M 2,5 L 5,7")
+            & > path:nth-of-type(2)
+                d: path("M 8,5 L 5,7")
+
+// .ThenBlock
+    
+
+// .ElseBlock
+//     display: flex

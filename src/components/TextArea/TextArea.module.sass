@@ -1,0 +1,27 @@
+.TextAreaWrapper
+    display: block
+
+.TextArea
+    display: block
+    box-sizing: border-box
+    border: 1px solid gray
+    width: 100%
+    // height: 100%
+    resize: none
+    overflow: hidden
+    white-space: pre-wrap
+    word-wrap: break-word
+    hyphens: auto
+    &:focus
+        border: 1px solid cyan
+        outline: 1px solid cyan
+    // &:active
+    //     outline: 2px solid lime
+
+.TextArea_invisiblediv
+    position: absolute
+    visibility: hidden
+    display: block
+.TextArea_hiddendiv
+    visibility: visible
+    display: none

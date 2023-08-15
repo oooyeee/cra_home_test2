@@ -1,0 +1,20 @@
+@use "./assets/sass/cssreset.sass"
+@use "./assets/sass/vars" as vars
+
+:root
+    --gray1: #{vars.$gray1}
+    --gray2: #{vars.$gray2}
+    --gray3: #{vars.$gray3}
+    --gray4: #{vars.$gray4}
+    --gray5: #{vars.$gray5}
+
+html
+    font-family: Verdana, sans-serif
+    scroll-behavior: smooth
+    font-size: 16px
+    @media (max-width: vars.$screen1)
+        font-size: 12px
+
+body
+    background-color: vars.$gray1
+    color: vars.$gray5
